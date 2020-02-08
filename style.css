@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+/* use of variables */
+:root {
+  --success-color: #2ecc71;
+  --error-color:#e74c3c;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -41,4 +47,33 @@ h2 {
   /* les labels sont inline par defaut, donc on les passent dans leur propre block*/
   display: block;
   margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
 }
